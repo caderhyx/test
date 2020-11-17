@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // var xiaoming = {
+        //     name: "小明",
+        //     birth: 1999,
+        //     age: function() {
+        //         var x = new Date().getFullYear();
+        //         return x - this.birth;
+        //     }
+        // };
+        // xiaoming.age();
+        // fn = xiaoming.age()
+        // console.log(fn)      打印结果为 21
+
+
+        // function getAge() {
+        //     var x = new Date().getFullYear();
+        //     return x - this.birth;
+        // }
+        // var xiaoming = {
+        //     name: xiaoming,
+        //     age: getAge,
+        //     birth: 1999
+        // }
+        // getAge();
+        // xiaoming.age();
+        // var fn = xiaoming.age;
+        // fn();
+        // console.log(getAge())
+        //     // 打印结果为  NAN
+        // console.log(xiaoming.age())
+        //     // 打印结果为  21
+        // console.log(fn())
+
+
+
+        var xiaoming = {
+            name: '小明',
+            birth: 1999,
+            age: function() {
+                var that = this;
+
+                function getAge() {
+                    var y = new Date().getFullYear();
+                    return y - that.birth;
+                    // 用that  而不是  this
+                }
+                return getAge();
+            }
+        };
+
+        xiaoming.age();
+        console.log(xiaoming.age())
+
+
+
+        'use strict';
+
+        var xiaoming = {
+            name: '小明',
+            birth: 1990,
+            age: function() {
+                var that = this; // 在方法内部一开始就捕获this
+                function getAgeFromBirth() {
+                    var y = new Date().getFullYear();
+                    return y - that.birth; // 用that而不是this
+                }
+                return getAgeFromBirth();
+            }
+        };
+
+        xiaoming.age();
+        console.log(xiaoming.age())
+
+
+
+
+        function getAge() {
+            var y = new Date().getFullYear();
+            return y - this.birth;
+        }
+
+        var xiaoming = {
+            name: '小明',
+            birth: 1990,
+            age: getAge
+        };
+
+        // xiaoming.age(); // 25
+        getAge.apply(xiaoming, []); // 25, this指向xiaoming, 参数为空
+        console.log(xiaoming.age());
+
+
+
+        function mathMax() {
+            var a = new Date
+        }
+    </script>
+</body>
+
+</html>

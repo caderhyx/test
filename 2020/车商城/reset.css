@@ -1,0 +1,22 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+
+.wrap {
+    width: 1200px;
+    margin: 0 auto;
+}

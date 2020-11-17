@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .back {
+            height: 300px;
+            background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1583646743287&di=516c9261db3eedc1835e173e11c17561&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Ffront%2F630%2Fw980h450%2F20190106%2FYewZ-hrfcctm9761393.jpg");
+            background-repeat: no-repeat;
+            /* 背景图平铺：repeat-x  repeat-y no-repeat*/
+            /* background-size: cover;  contain         auto
+                背景大小：         占满  对背景图进行拉伸    本身
+            
+            */
+        }
+        
+        .a1 {
+            background-position: center 100px;
+        }
+        
+        .a2 {
+            background-position: center -100px;
+        }
+        
+        .a3 {
+            background-position: center 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a1 back"></div>
+    <div class="a2 back"></div>
+    <div class="a3 back"></div>
+    <div class="a4 back"></div>
+</body>
+
+</html>

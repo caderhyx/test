@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a:link {
+        font-size: 20px;
+        color: #398574;
+    }
+    
+    a:visited {
+        font-size: 50px;
+        color: #893279;
+    }
+    
+    a:focus {
+        outline: none;
+    }
+    
+    a:hover {
+        font-size: 25px;
+        color: #ff0;
+    }
+    
+    a:active {
+        font-size: 5px;
+    }
+</style>
+
+<body>
+    <a href="">a标签1</a>
+    <a href="">a标签2</a>
+    <a href="">a标签3</a>
+    <a href="">a标签4</a>
+    <a href="">a标签5</a>
+
+</body>
+<script>
+    function test() {
+        var arr = [];
+        for (var i = 0; i < 10; i++) {
+            arr[i] = function() {
+                return i;
+            };
+            console.log(arr[i]())
+        }
+
+        for (let a = 0; a < 10; a++) {
+            console.log(arr[a]());
+        }
+
+    }
+    test(); // 连续打印 10 个 10
+
+
+
+    var countNumber = (function() {
+        var num = 0;
+        return function() {
+            return ++num;
+        };
+    })();
+    console.log(countNumber())
+    console.log(countNumber())
+    console.log(countNumber())
+</script>
+
+</html>

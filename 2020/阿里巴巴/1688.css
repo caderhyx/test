@@ -1,0 +1,831 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input,
+button {
+    outline: none;
+}
+
+header {
+    width: 100%;
+    height: 29px;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
+header .head {
+    width: 1190px;
+    height: 29px;
+    margin: 0 100px;
+    background-color: #F5F5F5;
+}
+
+@font-face {
+    font-family: '1688';
+    /* project id 1636169 */
+    src: url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.eot');
+    src: url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.eot?#iefix') format('embedded-opentype'), url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.woff2') format('woff2'), url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.woff') format('woff'), url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.ttf') format('truetype'), url('https://at.alicdn.com/t/font_1636169_pjuedp6a4s.svg#iconfont') format('svg');
+}
+
+header .zuo {
+    height: 29px;
+    line-height: 29px;
+    margin: 0 auto;
+    padding: 0 1px 0 3px;
+    font-size: 12px;
+}
+
+header .zuo ul {
+    display: inline-block;
+}
+
+header .zuo li {
+    display: inline-block;
+}
+
+header .zuo .sjal {
+    width: 48px;
+    height: 29px;
+    padding: 0 10px 0 16px;
+}
+
+header .zuo .huanyin {
+    width: 96px;
+    height: 29px;
+    padding-left: 11px;
+    padding-right: 5px;
+}
+
+header .zuo .dl {
+    width: 36px;
+    height: 29px;
+    padding-left: 15px;
+    padding-right: 8px;
+    font-family: '1688';
+}
+
+header .zuo .mianfei {
+    width: 48px;
+    height: 29px;
+    padding-right: 8px;
+    font-family: '1688';
+}
+
+header .zuo li a:hover {
+    color: coral;
+    text-decoration: underline;
+}
+
+header .you {
+    float: right;
+    display: inline-block;
+    height: 29px;
+    line-height: 29px;
+    font-size: 15px;
+}
+
+header .you li {
+    position: relative;
+}
+
+header .you>li:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+    display: block;
+    width: 1px;
+    height: 10px;
+    background-color: #CCC;
+}
+
+header .you>li {
+    display: inline-block;
+    font-size: 12px;
+}
+
+header .zuo .dl {
+    position: relative;
+}
+
+header .zuo .dl a {
+    color: orange;
+    text-decoration: underline;
+}
+
+header .zuo .dl .denglu {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    padding: 10px 10px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 1;
+    background-color: white;
+}
+
+header .zuo .dl .denglu li {
+    font-size: 13px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+}
+
+header .zuo .dl:hover .denglu {
+    display: block;
+}
+
+header .you li {
+    margin: 0 auto;
+    padding: 0 10px 0 11px;
+}
+
+header .you .first-2>a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 29px;
+    padding: 0 8px 0 7px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    z-index: 2;
+}
+
+header .you .wodeali {
+    position: absolute;
+    width: 280px;
+    height: 150px;
+    top: 29px;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 1;
+    background-color: white;
+}
+
+header .you .wodeali li {
+    width: 72px;
+    height: 24px;
+    padding: 0 8px;
+    font-weight: 800;
+}
+
+header .you .first-2:hover>a {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-bottom: none;
+}
+
+header .you .first-2:hover .wodeali {
+    display: block;
+}
+
+header .you .first-4 {
+    font-family: '1688';
+}
+
+header .you .first-2,
+header .you .first-,
+header .you .first-4,
+header .you .first-5,
+header .you .first-6,
+header .you .first-7,
+header .you .first-8,
+header .you .first-9 {
+    font-family: '1688';
+}
+
+header .you .first-5>a {
+    position: relative;
+    display: block;
+    width: 75px;
+    height: 29px;
+    padding: 0 11px 0 10px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    z-index: 2;
+}
+
+header .you .first-5 .cxt {
+    position: absolute;
+    width: 98px;
+    height: 180px;
+    top: 29px;
+    padding: 0 8px 8px 8px;
+    border: 1px solid #ccc;
+    font-weight: 500;
+    display: none;
+    z-index: 1;
+    background-color: white;
+}
+
+header .you .first-5:hover>a {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+header .you .first-5:hover .cxt {
+    display: block;
+}
+
+header .you .first-6 {
+    text-align: center;
+}
+
+header .you .first-6>a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 29px;
+    border: 1px solid transparent;
+    z-index: 2;
+}
+
+header .you .first-6 .shilishangjia {
+    position: absolute;
+    width: 60px;
+    background-color: white;
+    height: 104px;
+    top: 29px;
+    padding: 5px 0 8px 0;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 1;
+}
+
+header .you .first-6 .shilishangjia li {
+    width: 60px;
+    height: 24px;
+    padding: 0;
+    line-height: 24px;
+}
+
+header .you .first-6:hover>a {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+header .you .first-6:hover .shilishangjia {
+    display: block;
+}
+
+header .you .first-7>a {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 29px;
+    text-align: center;
+    border: 1px solid transparent;
+    z-index: 2;
+}
+
+header .you .first-7 .gongyingshang {
+    position: absolute;
+    width: 70px;
+    height: 150px;
+    top: 29px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 1;
+}
+
+header .you .first-7:hover>a {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+header .you .first-7:hover .gongyingshang {
+    display: block;
+}
+
+header .you .first-8>a {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 29px;
+    text-align: center;
+    border: 1px solid transparent;
+    z-index: 2;
+}
+
+header .you .first-8 .kefuzhongxin {
+    position: absolute;
+    width: 69px;
+    height: 65px;
+    top: 29px;
+    border: 1px solid #ccc;
+    background-color: white;
+    display: none;
+    z-index: 1;
+}
+
+header .you .first-8:hover>a {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+header .you .first-8:hover .kefuzhongxin {
+    display: block;
+}
+
+nav {
+    width: 100%;
+    height: 94px;
+}
+
+nav .ssk {
+    width: 1190px;
+    height: 40px;
+    margin: 0 auto;
+    padding: 29px 0 25px 0;
+}
+
+nav .ssk .sousuo {
+    display: inline-block;
+    width: 482px;
+    height: 36px;
+    padding: 0 7px;
+    border: 2px solid orangered;
+    position: relative;
+}
+
+nav .ssk form {
+    width: 600px;
+    height: 40px;
+    padding: 0 70px 0 0;
+    float: right;
+}
+
+nav .ssk .ss {
+    width: 98px;
+    height: 40px;
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    background-color: orangered;
+    border: none;
+}
+
+.there-1 {
+    width: 100%;
+    height: 39px;
+}
+
+.there-1 .there-2 {
+    width: 1190px;
+    height: 38px;
+    margin: 0 auto;
+}
+
+.there-1 .there-2 ul li {
+    display: inline-block;
+    height: 38px;
+    padding: 0 24px;
+    line-height: 38px;
+}
+
+.there-1 .there-2 ul .rexiao {
+    width: 203px;
+    height: 38px;
+    padding: 0 0 0 15px;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    background-color: #ff5400;
+}
+
+.there-1 .there-2 ul li a {
+    font-size: 16px;
+}
+
+.there-1 .there-2 ul .there-3 a {
+    color: #ff5400
+}
+
+.there-1 .there-2 ul .there-4 a:hover,
+.there-1 .there-2 ul .there-5 a:hover,
+.there-1 .there-2 ul .there-6 a:hover {
+    color: #ff5400;
+}
+
+.there-1 .there-2 .there-4 {
+    width: 93px;
+    height: 38px;
+    position: relative;
+}
+
+.there-1 .there-2 .there-4 .cu {
+    position: absolute;
+    width: 12px;
+    height: 14px;
+    padding: 1px 6px 3px 6px;
+    margin-left: 5px;
+    background-color: #fd664d;
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    top: 0;
+    border-radius: 2px;
+    /* 边框弧度 四角，要是成圆=高的一半 */
+}
+
+.four-1 {
+    width: 100%;
+    height: 400px;
+}
+
+.four-1 .four-2 {
+    width: 1190px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.four-1 .four-2 .fushi {
+    width: 218px;
+    height: 390px;
+    padding: 5px 0;
+    background-color: #838383;
+}
+
+.four-1 .four-2 .fushi a {
+    width: 218px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    padding-left: 20px;
+}
+
+.four-1 .four-2 .fushi li {
+    position: relative;
+}
+
+.four-1 .four-2 .fushi .gongyong {
+    width: 946px;
+    height: 358px;
+    border: 1px solid #838383;
+    position: absolute;
+    top: -5px;
+    left: 218px;
+}
+
+.four-1 .four-2 .fushi .ab-1 {
+    padding: 20px 20px 20px 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi h3 {
+    padding-left: 10px;
+    border-left: 5px solid orangered;
+}
+
+.four-1 .four-2 .fushi .ab-1 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0
+}
+
+.four-1 .four-2 .fushi>li:hover {
+    background-color: #ff6a00e3;
+}
+
+.four-1 .four-2 .fushi .abb-1:hover .ab-1 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-2 {
+    top: -35px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-2 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-2:hover {
+    background-color: #ff6a00e3;
+}
+
+.four-1 .four-2 .fushi .abb-2:hover .ab-2 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-3 {
+    top: -65px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-3 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-3:hover {
+    background-color: #ff6a00e3;
+}
+
+.four-1 .four-2 .fushi .abb-3:hover .ab-3 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-4 {
+    top: -95px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-4 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-4:hover {
+    background-color: #ff6a00e3;
+}
+
+.four-1 .four-2 .fushi .abb-4:hover .ab-4 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-5 {
+    top: -125px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-5 li {
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-5:hover .ab-5 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-6 {
+    top: -155px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-6 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-6:hover .ab-6 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-7 {
+    top: -185px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-7 li {
+    display: inline-block;
+    width: 200px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-7:hover .ab-7 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-8 {
+    top: -215px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-8 li {
+    display: inline-block;
+    width: 250px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-8:hover .ab-8 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-9 {
+    top: -245px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-9 li {
+    display: inline-block;
+    width: 250px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-9:hover .ab-9 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-10 {
+    top: -275px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-10 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-10:hover .ab-10 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-11 {
+    top: -305px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-11 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-11:hover .ab-11 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-12 {
+    top: -335px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-12 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-12:hover .ab-12 {
+    display: block;
+}
+
+.four-1 .four-2 .fushi .ab-13 {
+    top: -365px;
+    padding: 20px;
+    display: none;
+}
+
+.four-1 .four-2 .fushi .ab-13 li {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    padding: 0 80px 10px 0;
+    border-bottom: 1px solid orangered;
+    margin: 30px 30px 80px 0;
+}
+
+.four-1 .four-2 .fushi .abb-13:hover .ab-13 {
+    display: block;
+}
+
+footer {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #000;
+    bottom: 0;
+}
+
+footer .second-1 {
+    width: 1190px;
+    height: 350px;
+    margin: 0 125px;
+}
+
+footer .second-1 .second-2 {
+    width: 840px;
+    height: 350px;
+    margin: 0, auto;
+    float: right;
+}
+
+footer .second-1 .second-2 .second-3 {
+    width: 840px;
+    height: 75px;
+    padding: 30px 0;
+    margin: 28px 0 1px 0;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+footer .second-1 .second-2 .second-3 ul {
+    display: inline-block;
+    margin: 0 auto;
+    color: #949494;
+}
+
+footer .second-1 .second-2 .second-4 {
+    width: 840px;
+    height: 152px;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+footer .second-1 .second-2 .second-4 ul {
+    display: inline-block;
+    width: 120px;
+    height: 150px;
+    margin: 0 auto;
+    color: #949494;
+}
+
+footer .second-1 .second-2 .second-4 ul h3 {
+    width: 120px;
+    height: 14px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: #949494
+}
+
+footer .second-1 .second-2 .second-4 ul li {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+footer .second-1 .second-2 .second-4 ul li a {
+    color: #949494;
+}
+
+footer .second-1 .second-2 .second-4 ul li a:hover {
+    text-decoration: underline;
+}

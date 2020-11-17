@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var nums = [1, 21, 23, 53, 54, 62, 222];
+        for (var i = 0; i < nums.length / 2; i++) {
+            var temp = nums[i]
+                // 借用一个变量，使它们进行交换
+            nums[i] = nums[nums.length - 1 - i]
+            nums[nums.length - 1 - i] = temp
+        }
+        console.log(nums)
+    </script>
+</body>
+
+</html>

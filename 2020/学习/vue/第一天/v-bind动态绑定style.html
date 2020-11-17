@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- 必须使用 驼峰标识 -->
+        <h2 :style="{backgroundColor: color,fontSize:size+' px '}">{{message}}</h2>
+
+        <!-- 注意：这儿使用函数调用不需要{}了 -->
+        <h2 :style="getStyles()">{{message}}</h2>
+    </div>
+
+    <script src="../vue/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hi',
+                color: 'red',
+                size: 100,
+            },
+            methods: {
+                getStyles: function() {
+                    return {
+                        backgroundColor: this.color,
+                        fontSize: this.size + ' px '
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

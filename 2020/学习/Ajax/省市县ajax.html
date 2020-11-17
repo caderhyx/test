@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        document.getElementById('sheng').onchange = function() {
+            var id = this.value;
+            xhr.onreadystatechange = function() {
+                if (xhr.readystate == 4 && xhr.status == 200) {
+                    // 接收服务器返回的数据
+                    var result = xhr.responseText;
+                    var res = JSON.parse(result);
+
+                    var shi = document.getElementById('shi');
+
+                    shi.innerHTML = '<option value="0">--请选择市--</option>';
+                    document.getElementById('xian').innerHTML = '<option value="0">--请选择县--</option>'
+                    for (var i in res) {
+                        var option = document.createElement('option');
+                        option.setAttribute('value', res[i].id);
+                        option.innerText = res[i].cn_name;
+                        shi.appendChild(option);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

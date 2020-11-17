@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function() {
+                var lis = document.getElementsByTagName('li');
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].style.color = 'red';
+                    lis[i].style.backgroundColor = 'green'
+                }
+            }
+            // 使用JQuery 写  与上面的代码相等
+            //  JQuery 中 ：
+            // $() ; 是jQuery的一个函数，参数可以是一个dom对象，可以是选择器，也可以是标签，返回jQuery对象
+            // $(document) 返回一个jQuery对象，表示整个文档
+            // $(document).ready()    jQuery封装好的一个事件，表示页面加载完毕后触发的一个事件，它的参数是一个函数，表示事件处理函数
+
+        $(document).ready(function() {
+                $('li').css('color', 'red');
+                $('li').css('background-color', 'green')
+                    // 链式操作：
+                $('li').css('color', 'red').css('background-color', 'green')
+            })
+            // 这里的 $(document).ready(function(){})  =====  window.onload = function(){}
+            // 都表示页面加载完毕后进行代码
+    </script>
+
+    <ul>
+        <li>家</li>
+        <li>学校</li>
+        <li>工作</li>
+    </ul>
+</body>
+
+</html>

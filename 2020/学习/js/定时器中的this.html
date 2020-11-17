@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 1;
+        var b = {
+            a: 2,
+            say: function() {
+                console.log(this.a)
+            }
+        };
+        // 什么时候调用了say 才能知道this指向谁
+
+        // 这种形式是，一秒后调用say，
+        setTimeout(b.say, 1000) // 1
+            // 上头等于下面的
+            // setTimeout(function(){
+            // console.log(this.a)
+            // },1000)
+
+        // 字符串形式
+        // 这种形式是，当下就调用了say，然后1秒后显示
+        setTimeout('b.say()', 1000) // 2
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // var arr1 = [
+        //     [1, 2, 3],
+        //     [3, 2],
+        //     [4, 6],
+        //     [7, 34]
+        // ]
+        // var num = arr1[1][0];
+        // console.log(num)
+
+        var person = {
+            name: '小明',
+            age: 20,
+            gender: 'male',
+            passport: 'G-12345678',
+            school: 'No.4 middle school',
+            address: {
+                city: 'Beijing',
+                street: 'No.1 Road',
+                zipcode: '100001'
+            }
+        };
+        var {
+            name,
+            age,
+            address: {
+                city
+            }
+        } = person;
+        console.log(name, age, city)
+
+
+
+        var x, y;
+        ({
+            x,
+            y
+        } = {
+            x: 100,
+            y: 100
+        })
+        console.log(x, y)
+    </script>
+
+</body>
+
+</html>

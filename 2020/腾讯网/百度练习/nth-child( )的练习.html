@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* even 偶数
+    odd 奇数
+  */
+    /* 
+      交集选择器
+        *是一个p元素
+        *同时作为子素的第一个元素
+    */
+    
+    p:nth-child(1) {
+        color: #f00;
+    }
+    /*
+      后代选择器
+       *选择p元素的后代的第一个子元素
+    */
+    
+    ul :nth-child(1) {
+        color: #f00;
+    }
+    /* 倒着数第一个 */
+    
+    p:nth-last-child(1) {
+        color: #f00;
+    }
+</style>
+
+<body>
+    <!-- <div>
+        <p>这里是p1</p>
+        <p>这里是p2</p>
+        <p>这里是p3</p>
+        <p>这里是p4</p>
+        <p>这里是p5</p>
+        <p>这里是p6</p>
+        <p>这里是p7</p>
+        <p>这里是p8</p>
+    </div>
+    <p>
+        <span>这里是span1</span>
+        <span>这里是span2</span>
+        <span>这里是span3</span>
+    </p>
+    <p>这里是</p> -->
+    <div class="option">
+        <ul>
+            <li>
+                <a href="#" class="caption">
+            首页
+          </a>
+            </li>
+            <li>
+                <a href="#">
+            全球逛
+          </a>
+            </li>
+            <li>
+                <a href="#">
+            工厂店
+          </a>
+            </li>
+            <li>
+                <a href="#">
+            品质奶粉
+          </a>
+            </li>
+            <li>
+                <a href="#">
+            人气面膜
+          </a>
+            </li>
+            <li>
+                <a href="#">
+            充值
+          </a>
+            </li>
+        </ul>
+</body>
+
+</html>

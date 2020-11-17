@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var nums = [23, 22, 33, 44, 25];
+        var max = nums[0]
+        var min = nums[0]
+        for (var i = 0; i < nums.length; i++) {
+
+
+            if (nums[i] < min) {
+                //     // 如果nums[i]<min ，它就为最小值；
+                //     // 如果nums[i]>max ，它就是最大值。
+                min = nums[i]
+
+            }
+
+            if (nums[i] > max) {
+                max = nums[i]
+
+            }
+        }
+        console.log(min)
+        console.log(max)
+
+
+        var title = 0;
+        for (var i = 0; i < nums.length; i++) {
+            title += nums[i]
+        }
+        console.log(title)
+    </script>
+</body>
+
+</html>

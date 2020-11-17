@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        body>ul>li {
+            float: left;
+        }
+        
+        p {
+            width: 100px;
+            height: 30px;
+            color: #fff;
+            line-height: 30px;
+            background-color: #232323;
+        }
+        
+        ul ul li {
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #999;
+        }
+        
+        ul ul {
+            display: none;
+            /* 超出部分隐藏 */
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <p>顶级菜单1</p>
+            <ul>
+                <li>子菜单11</li>
+                <li>子菜单12</li>
+                <li>子菜单13</li>
+            </ul>
+        </li>
+        <li>
+            <p>顶级菜单2</p>
+            <ul>
+                <li>子菜单11</li>
+                <li>子菜单12</li>
+                <li>子菜单13</li>
+            </ul>
+        </li>
+        <li>
+            <p>顶级菜单3</p>
+            <ul>
+                <li>子菜单11</li>
+                <li>子菜单12</li>
+                <li>子菜单13</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        // 找大的li，不包括菜单的li
+        var a = document.querySelectorAll('body>ul>li');
+
+        // var aa = a.children[1];  这儿不能这么写，这么写相当于一个数组，还是找不到当前点击的那个子菜单
+        // 这个循环是为了给每个li绑定 onmouseover 事件
+        for (var i = 0; i < a.length; i++) {
+            // a[i].j = i;
+            a[i].onmouseover = function() {
+                this.children[1].style.display = 'block';
+                // 找到当前子菜单，设置下拉
+                var aa = this.children[1];
+                change(aa);
+            }
+            a[i].onmouseout = function() {
+                this.children[1].style.display = 'none';
+            }
+
+        }
+
+        // 写一个函数，让元素的高度经过0.9s 从0慢慢变化到99
+        function change(ele) {
+            // 先让元素的高度设置为0
+            ele.style.height = 0;
+            // 循环180次 ，每次变化0.5像素
+            for (var j = 1; j <= 180; j++) {
+                // 定时器外套一个函数，是为了保存变量
+                (function(x) {
+                    setTimeout(function() {
+                        ele.style.height = 0.5 * x + 'px'
+                    }, 5 * x)
+                })(j)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

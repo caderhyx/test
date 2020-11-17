@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2 :style='{active:color}'>{{firstName}} {{lastName}}</h2>
+        <h2 :style='{active:color}'>{{firstName + ' ' +lastName}}</h2>
+        <h2 :style='{active:color}'>{{getFullName()}}</h2>
+
+        <!-- 这里fullName 不需要加()调用， 因为computed 定义了它为属性  -->
+        <h2>{{fullName}}</h2>
+    </div>
+</body>
+
+<script src="../vue/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'hou',
+            lastName: 'yaoxin',
+            color: true,
+        },
+
+        methods: {
+            getFullName() {
+                return this.firstName + ' ' + this.lastName
+            }
+        },
+        // computed 计算属性
+        computed: {
+            fullName: function() {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+
+    })
+</script>
+
+</html>

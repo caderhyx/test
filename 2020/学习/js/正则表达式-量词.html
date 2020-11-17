@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var str = 'jssj  jsj jssssj  jj';
+        // + 表示至少有一个前导字符。前导字符是符号前面的一个字符。 /js+j/g  前导字符就是s
+        var result = str.match(/js+j/g);
+        // * 表示前导字符个数不限
+        var result1 = str.match(/js*j/g);
+        // ? 表示0个或1个前导字符
+        var result2 = str.match(/js?j/g);
+        // {2} 表示前导字符必须有2个  /js{2}j/g
+        // {2,} 表示前导字符至少有2个
+        // {2,4} 表示前导字符有2个 3个 4个
+
+        // ^ 表示从字符串的开头开始匹配  下面这个得到 ‘js is js’
+        // $ 表示从字符串的结尾匹配
+        var str2 = 'js is jss ,this is a js'
+        var result3 = str.match(/^js/g)
+        var result4 = str.match(/js$/g)
+
+        // ^js$  表示只匹配js ，其他任何都不匹配，这种情况表示匹配整个字符串
+        // . 表示任意字符 /j.j/  表示中间可以是任意字符，一个点只表示一个字符
+        // .* 表示任意字符串
+
+
+        console.log(result);
+    </script>
+</body>
+
+</html>

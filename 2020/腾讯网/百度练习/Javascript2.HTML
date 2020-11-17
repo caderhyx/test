@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 打印0~99之间的数字
+
+        // var i = 0;
+        // while (i < 100) {
+        //     i++;
+        //     console.log(i);
+        // }
+
+
+        // 计算0~99之间的奇数和 与 偶数和
+        var i = 0;
+        var odd = 0;
+        var eve = 0;
+
+        while (i < 100) {
+            if (i % 2 !== 0) {
+                console.log("这是奇数", i)
+                odd += i
+
+            } else if (i !== 0) {
+                console.log("这里是偶数", i)
+                eve += i
+            } else {
+                console.log(0)
+            }
+            i++
+        }
+        console.log(odd)
+        console.log(eve)
+    </script>
+</body>
+
+</html>

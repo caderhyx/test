@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .img1 {
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./img/FDB0A8E6-D674-4858-8A67-13B928E02154.png" alt="" class="img1">
+    <img src="./img/u=749491664,2108317815&fm=15&gp=0.jpg" alt="">
+    <img src="./img/WeChatf984a3d3e1f950761defb1b3e26f1f60.png" alt="">
+</body>
+<script>
+    var imgs = document.getElementsByTagName('img');
+    // 先隐藏的图片 （第一张）
+    var outIndex = 0;
+    // 当前显示的图片 （第二张）
+    var inIndex = 1;
+
+    setInterval(function() {
+            // 为了使图片可以进行循环
+            if (outIndex >= 3) {
+                outIndex = 0;
+            }
+            if (inIndex >= 3) {
+                inIndex = 0
+            }
+            // 设置图片的浮级  要显示的图片浮级要大于隐藏的图片
+            // 定时器3秒后进行函数，3秒前，css中设置了outindex[0]的zindex为2
+            // 所以第一张可以在最上面显示，3秒后，第一张图片zindex为2 
+            // 第二张图片）zindex为3 
+            imgs[outIndex].style.zIndex = 2;
+            imgs[inIndex].style.zIndex = 3;
+            // 调用下面的函数，传递进去要显示的图片
+            change(imgs[inIndex]);
+            outIndex++;
+            inIndex++;
+        }, 3000)
+        // 设置透明度变化的过程
+    function change(ele) {
+        // 先让图片的透明度置为0
+        ele.style.opacity = 0;
+        // 让图片透明度慢慢变化为1
+        // 通过1秒透明度从0 到1 
+        // 想要实现 0 - 0.05 - 0.1 - 0.15 ....-1,变化20次
+        // 每次循环透明度变化一次，使图片递渐的不那么生硬
+        for (var i = 1; i <= 20; i++) {
+            // for循环是一下就进行完的，所以要将定时器闭包，让循环完一个值传进去一个值
+            //  如果这儿不闭包，定时器得到值为21
+            (function(x) {
+                setTimeout(() => {
+                    ele.style.opacity = 0.05 * x;
+                    // 
+                    if (x == 20) {
+                        // 代码时延迟一秒，outindex大一秒，所以需要减1
+                        // 图片完全展示出来的时候（x=20）时，应该上一张图片（展示过的）的z-index为1
+                        imgs[outIndex - 1].style.zIndex = 1
+                    }
+                }, 50 * x);
+            })(i);
+        }
+    }
+</script>
+
+</html>

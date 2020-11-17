@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+        }
+        
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        ul li {
+            width: 100px;
+            height: 30px;
+            background-color: #234244;
+            color: #fff;
+            line-height: 30px;
+        }
+        
+        .on {
+            background-color: #898;
+        }
+        
+        div {
+            width: 400px;
+            height: 200px;
+            background-color: #898;
+            display: none;
+        }
+        
+        .bo {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="on">体育</li>
+        <li>娱乐</li>
+        <li>JS</li>
+    </ul>
+    <div class="bo">这里是体育</div>
+    <div>这里是娱乐</div>
+    <div>这里是js</div>
+
+    <script>
+        var lis = document.getElementsByTagName('li');
+        var div = document.getElementsByTagName('div');
+        for (var i = 0; i < lis.length; i++) {
+            // 想要找到指定哪个元素，必须知道它的索引 
+            lis[i].a = i;
+            // 循环的目的：给每个li 绑定点击事件
+
+            lis[i].onclick = function() {
+                // 这个时候想：点击谁，谁的li和div对应的东西就出来
+                // 
+                for (var j = 0; j < lis.length; j++) {
+                    // 循环的目的： 找到当前点击的对象
+                    if (j == this.a) {
+                        lis[j].className = 'on'
+                        div[j].className = 'bo'
+
+                    } else {
+                        lis[j].className = ''
+                        div[j].className = ''
+                    }
+                }
+
+
+
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

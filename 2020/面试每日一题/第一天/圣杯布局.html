@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .min,
+        .left,
+        .right {
+            float: left;
+            position: relative;
+        }
+        
+        .header,
+        .footer {
+            background: #ccc;
+            text-align: center;
+        }
+        
+        .center {
+            padding: 0 200px 0 220px;
+        }
+        
+        .left {
+            margin-left: -100%;
+            width: 220px;
+            background: red;
+            left: -220px;
+        }
+        
+        .right {
+            margin-left: -200px;
+            width: 200px;
+            background: blue;
+            right: -200px;
+        }
+        
+        .min {
+            width: 100%;
+            background: green;
+        }
+        
+        .footer {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>header</h1>
+    </div>
+    <div class="center">
+        <div class="min">
+            <p>中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中</p>
+        </div>
+        <div class="left">
+            <p>左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左左</p>
+        </div>
+        <div class="right">
+            <p>右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右右</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h1>footer</h1>
+    </div>
+</body>
+
+</html>

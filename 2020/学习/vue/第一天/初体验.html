@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--这里必须以{{}} 设置 -->
+    <div id="app">{{massage}}
+        <p>{{name}}</p>
+    </div>
+
+    <!-- 引入vuejs文档 -->
+    <script src=""></script>
+    <script>
+        // （)中必须以{}
+        let app = new Vue({
+            // 这里用于告诉下面的代码是设置哪个元素的内容
+            el: '#app',
+            data: {
+                massage: 'hell houyaoxin',
+                name: 'houhouhou'
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Map() {
+            this.width = '600px';
+            this.height = '400px';
+            this.backgroundColor = '#ddd';
+            this.overflow = 'hidden';
+            this.position = 'relative';
+            // 这儿的意思是将地图的div放入ditu中，方便之后的调用。
+            this.ditu = null;
+            this.show = function() {
+                this.ditu = document.createElement('div');
+                this.ditu.style.width = this.width;
+                this.ditu.style.height = this.height;
+                this.ditu.style.position = this.position;
+                this.ditu.style.backgroundColor = this.backgroundColor;
+                this.ditu.style.overflow = this.overflow;
+                document.body.appendChild(this.ditu);
+            }
+        }
+        var map = new Map;
+        map.show();
+
+        function Food() {
+            this.width = 20;
+            this.height = 20;
+            this.backgroundColor = 'green';
+            this.position = 'absolute';
+            this.direction = 'right';
+            // 这儿留着它俩是 之后方便调用
+            this.x = null;
+            this.y = null;
+            this.shiwu = null;
+            this.show = function() {
+                if (this.shiwu == null) {
+                    // 这时候需要用 this.shiwu 来使用它们， 因为如果不以this.shiwu 重新调用这个函数的时候 它的值还是null
+                    this.shiwu = document.createElement('div');
+                    this.shiwu.style.width = this.width + 'px';
+                    this.shiwu.style.height = this.height + 'px';
+
+                    this.shiwu.style.background = this.backgroundColor;
+                    this.shiwu.style.position = this.position;
+                }
+
+                this.x = Math.floor(Math.random() * 30);
+                this.y = Math.floor(Math.random() * 20);
+                // x 代表左 这儿得写成left 
+                this.shiwu.style.left = this.x * this.width + 'px';
+                this.shiwu.style.top = this.y * this.height + 'px';
+                // 得把这个div 放入地图中的那个div中
+                map.ditu.appendChild(this.shiwu)
+            }
+        }
+        var food = new Food();
+        food.show();
+
+        function Snake() {
+            // 它一开始出来的位置
+            this.body = [
+                [3, 2, 'red', null],
+                [2, 2, 'blue', null],
+                [1, 2, 'blue', null]
+            ];
+            this.width = 20;
+            this.position = 'absolute';
+            this.height = 20;
+            this.direction = 'right';
+            // this.kuyu = [null];
+            this.show = function() {
+                for (var i = 0; i < this.body.length; i++) {
+                    if (this.body[i][3] == null) {
+                        this.body[i][3] = document.createElement('div');
+                        this.body[i][3].style.width = this.width + 'px';
+                        this.body[i][3].style.height = this.height + 'px';
+                        this.body[i][3].style.backgroundColor = this.body[i][2];
+                        this.body[i][3].style.position = this.position;
+                    }
+
+                    // 这时候建立一个xy轴，来用数组中数据
+                    this.body[i][3].style.left = this.body[i][0] * this.width + 'px';
+                    this.body[i][3].style.top = this.body[i][1] * this.height + 'px';
+                    map.ditu.appendChild(this.body[i][3]);
+                }
+                // 这个时候我不知道 蛇头一定时间移动多少在哪儿设置  -----单独设置
+                this.move = function() {
+                    if (this.body[0][0] == food.x && this.body[0][1] == food.y) {
+                        this.body.push([0, 0, 'blue', null]);
+                        // 吃完这个食物，让重新刷新一个新食物
+                        food.show();
+                        // 这时候发现食物还是不动，原因：this.x this.y 还是原来的 ，应该把随机数移动到下面
+
+                        if (t > 200) {
+                            t -= 50
+                            sudu()
+                        }
+                    }
+
+                    for (var i = this.body.length - 1; i > 0; i--) {
+                        // 它有两个数组呢，让它的下一个等于它的上一个
+                        this.body[i][0] = this.body[i - 1][0];
+                        this.body[i][1] = this.body[i - 1][1];
+                    }
+                    // 蛇头单独设置
+                    // snake.body[0][0] += 1
+                    // snake.body[0][1] += 1
+                    if (this.direction == 'right') {
+                        this.body[0][0] += 1;
+                    } else if (this.direction == 'left') {
+                        this.body[0][0] -= 1;
+                    } else if (this.direction == 'up') {
+                        this.body[0][1] -= 1;
+                    } else if (this.direction == 'down') {
+                        this.body[0][1] += 1;
+                    }
+                    if (this.body[0][0] > 30) {
+                        this.body[0][0] = 0;
+                    } else if (this.body[0][1] > 20) {
+                        this.body[0][1] = 0
+                    } else if (this.body[0][1] < 0) {
+                        this.body[0][1] = 20
+                    } else if (this.body[0][0] < 0) {
+                        this.body[0][0] = 30
+                    }
+                    // 重新设置了蛇，需要重新调用它的show
+                    this.show();
+                }
+            }
+        }
+
+        // 将方法放入原型对象中更好。 
+        //  Snake.prototype = {
+        //    show : function(){},
+        //    move : function(){}
+        // }
+        var snake = new Snake();
+        snake.show();
+
+        var t = 500;
+        var timer;
+
+        function sudu() {
+            clearInterval(timer);
+            setInterval('snake.move()', t);
+        }
+        sudu();
+
+        // 给页面绑定键盘事件 
+        document.onkeydown = function(evt) {
+            var e = window.event || evt;
+            var keyCode = e.keyCode;
+            if (keyCode == 65 && snake.direction != 'right') {
+                snake.direction = 'left';
+            } else if (keyCode == 87 && snake.direction != 'down') {
+                snake.direction = 'up';
+            } else if (keyCode == 68 && snake.direction != 'left') {
+                snake.direction = 'right';
+                console.log(123)
+            } else if (keyCode == 83 && snake.direction != 'up') {
+                snake.direction = 'down';
+            }
+        }
+    </script>
+</body>
+
+</html>

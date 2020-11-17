@@ -1,0 +1,299 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+body{
+	background-color:#f5f5f5;
+}
+ul,li
+{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	
+	/*
+	全部字体去除a链接的下划线
+	*/
+}
+header{
+	background-color:#e3e4e5;
+ }
+header .head-right{
+	float: right;
+}
+header .city{
+	display: inline-block;
+	line-height: 30px;
+	width: 58px;
+	height: 30px;
+	font-size: 12px;
+}
+header .city:hover .city-list{
+	display: block;
+}
+header .city ul{
+	position: absolute;
+	z-index: 1;
+	left: 0px; 
+	width: 322px; 
+	height: 438px;
+	top:30px;
+	padding: 10px;
+	background-color: #fff;
+	display: none;
+}
+header .city ul li{
+	display: inline-block;
+	margin: 0 10px;
+}
+header .head-right > li{
+	/* >施命于儿子辈,孙子辈不涉及*/
+	display: inline-block;
+	padding:0 10px;
+	border-right: 1px  solid #232;
+	line-height: 30px;
+	
+}
+header .beijing{
+	width: 1190px;
+	height: 30px;
+	margin: 0 auto;
+	position: relative;
+}
+header .city li{
+	font-size: 12px;
+	margin-right:10px ;
+	margin-top: 10px;
+	padding: 0 12px;
+}
+header .city li:hover{
+	background-color: #999999;
+	color: red;
+}
+header .city .citys:hover,header .city .citys{
+	background-color:red ;
+	color:white;
+	
+}
+header .head-right li,header .head-right li a{
+	color:#999;
+}
+header .head-right li:hover,header .head-right li a:hover{
+	color: red;
+}
+header .head-right li .zhuce{
+	color: red;
+}
+header .head-right .jingdong{
+	position: relative;
+}
+header .wodejd {
+	position: absolute;
+	z-index: 1;
+    width: 210px;
+	height: 200px;
+	top: 30px;
+	padding: 10px 20px;
+	background-color: #fff;
+	display: none;
+}
+header .wodejd li{
+	width: 100px;
+	display: inline-block;
+	height: 30px;
+	/* padding: 0 10px; */
+	line-height: 30px;
+    font-size: 15px;
+}
+header .jingdong:hover .wodejd{
+	display: block;
+}
+header .head-right .qiyecaigou{
+	position: relative;
+}
+header .qiyecaigou .qiye{
+	position: absolute;
+	width: 100px;
+	height: 200px;
+	top: 30px;
+	padding: 10px;
+	background-color: #fff;
+	display: none;
+}
+header .head-right .qiyecaigou:hover .qiye{
+	display: block;
+}
+header .head-right .kehufuwu{
+	position:relative ;
+}
+header .head-right .kehufuwu .kehu{
+	position: absolute;
+	width: 100px;
+	height: 200px;
+	top: 30px;
+	padding: 10px;
+	background-color: #fff;
+	display: none;
+}
+header .head-right .kehufuwu:hover .kehu{
+	display: block;
+}
+header .head-right .kehufuwu .kehu .ke,header .head-right .kehufuwu .kehu .shang{
+	color: black;
+	font-weight: bold;
+}
+header .head-right .wzdh{
+	position: relative;
+}
+header .head-right .wzdh .wz > div{
+	display: inline-block;
+	margin-right:100px;
+	padding: 20px;
+	border-right: 1px solid #232;
+	line-height: 50px;
+	font-size: 15px;
+}
+header .head-right .wzdh .wz{
+	position: absolute;
+	z-index: 1;
+	width: 1000px;
+	height: 400px;
+	top:30px;
+	padding: 10px;
+	right: -10px;
+	background-color: #fff;
+	display: none;
+	color: black;
+	font-weight: bold;
+}
+header .head-right .wzdh:hover .wz{
+	display: block;
+}
+nav form{
+	margin: 50px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.sousuo{
+	
+	width: 504px;
+	height: 36px;
+	border: 2px solid red;
+
+}
+.ss{
+	width:82px ;
+	height: 40px;
+	margin: 0px;
+	font-size: 20px ;
+	color: white;
+	background-color: red;
+	border: 0;
+	outline: none;
+}
+/* 全部商品 */
+.zhengwen{
+	width: 1190px;
+	margin: 0 auto;	
+	
+}
+.zhengwen ul{
+	display: flex;
+	flew-direction:row;		
+}
+.zhengwen ul li{
+	font-weight:  700;
+	padding-right: 30px;
+	line-height: 33px;
+}
+.zhengwen ul li a{
+	color: black;	
+}
+.zhengwen ul li a:hover{
+	color: red;
+}
+.zhengwen ul .link{
+	background-color: red;
+	width: 170px;
+	height: 33px;
+	padding:10px 50px;
+	color: white;
+	font-weight: 400;
+	position: relative;
+}
+.zhengwen ul .link:hover{
+	color: white;	
+}
+.zhengwen .fenlei a{
+	
+	font-size: 15px;
+	color: #999;
+	width: 196px;	
+	
+}
+.zhengwen .fenlei {
+	display: none;
+	background-color: #fff;
+	padding: 1px 0;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #999;
+}
+.zhengwen .quanbushangpin:hover .fenlei {
+	display: block;
+}
+.banner{
+	width: 100%;
+	height: 800px;
+	background: url(https://m.360buyimg.com/babel/jfs/t1/92591/19/10852/488865/5e23fa2bEf5edbf59/b5485b4b2fb2a925.jpg.webp) no-repeat 50% 50%;
+}
+footer{
+	background-color:#e3e4e5;	
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+footer .abbb{
+	width: 100%;
+	height: 102px;	
+	border-bottom:1px solid #999999 ;
+}
+footer .abb{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-grow: <1>;
+	width: 1233px;
+	height: 102px;
+	margin: 0 auto;
+}
+
+footer .abb li{
+	width: 292px;
+	height: 42px;
+	padding: 30px 0 30px 0px;	
+	font-weight: 700;
+	display: flex;
+    font-size: 18px;
+	line-height: 42px;
+	/* text-indent:46px */;
+	color: #444;
+}
+footer .abb1 {
+	width: 1285px;
+	height: 160px;
+	padding: 20px 0 20px 65px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+footer .abb1 li{
+	flex: 1;
+	/**
+	 
+	 */
+	display: flex;
+	flex-direction: column;
+}

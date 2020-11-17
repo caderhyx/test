@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 0;
+            padding: 0;
+            height: 500px;
+            background-color: #fff;
+            position: relative;
+        }
+        
+        button {
+            margin-left: 10px;
+        }
+        
+        .box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            background-color: #ff0;
+        }
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 200px;
+            top: 150px;
+            background-color: #f22;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--          需求： -->
+    <!-- 匀速动画的封装：每间隔30ms，移动盒子10px -->
+
+    <div class="box">
+        <button>到200px</button>
+        <button>到500px</button>
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <script>
+        var box1 = document.getElementsByClassName('box1')[0];
+        var box2 = document.getElementsByClassName('box2')[0];
+        var arr = document.getElementsByTagName('button');
+
+        arr[0].onclick = function() {
+            animate(box1, 200)
+            animate(box2, 200)
+        }
+
+        arr[1].onclick = function() {
+            animate(box1, 500)
+            animate(box2, 500)
+        }
+
+        function animate(element, target) {
+            // 先清除盒子里的其他定时器
+            clearInterval(add);
+            // 盒子移动10px  设置步长，目标值大于当前值时 为正的，小于的时候为负（返回）
+            // var spend = target > element.offsetLeft ? 10 : -10;
+
+            // 设置定时器
+            var add = setInterval(
+                function() {
+                    var spend = (target - element.offsetLeft) / 10;
+                    // 因为步长除以10 所以会有小数 ，若步长大于0 是 有小数就向上取（相当于最后最低为1）
+                    spend = spend > 0 ? Math.ceil(spend) : Math.floor(spend);
+                    // 赋值之前  计算距离目标的差值
+                    var d = target - element.offsetLeft;
+                    //   定时器赋值
+                    element.style.left = element.offsetLeft + spend + 'px';
+                    //  如果盒子走到小于步长的位置时，给它直接设置成到目标值的位置
+                    console.log(spend)
+                    if (Math.abs(d) <= Math.abs(spend)) {
+                        element.style.left = target + 'px';
+                        clearInterval(add)
+                    }
+                }, 30
+            )
+        }
+    </script>
+
+</body>
+
+</html>

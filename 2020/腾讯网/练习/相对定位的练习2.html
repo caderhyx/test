@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            overflow: hidden;
+            min-width: 1000px;
+        }
+        
+        .box img {
+            position: relative;
+            /* right: 960px; */
+            /* 先移动图片的一半 */
+            /* margin-left: 50%; */
+            /* 这是以父元素宽度的50% 移动父元素的一半 */
+            transform: translate(-50%);
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="https://img.crawler.qq.com/lolwebschool/0/JAutoCMS_LOLWeb_b97528a1162e1d24a52b5f11cd30bc52/0" alt="">
+    </div>
+</body>
+
+</html>

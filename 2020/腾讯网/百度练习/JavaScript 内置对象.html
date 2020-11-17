@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /*
+         * 生成两个整数之间的随机整数，并且要包含这两个整数
+         */
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const arr = ['许嵩', '邓紫棋', '毛不易', '解忧邵帅'];
+        const index = getRandom(0, arr.length - 1); // 生成随机的index
+        console.log(arr[index]); // 随机点名
+
+
+
+
+
+
+        // 随机点名
+
+        function getName(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        var arr1 = ['侯耀鑫', '韩雅雯', '二飞'];
+        var index1 = getName(0, arr1.length - 1);
+        console.log(arr1[index1])
+
+        // var date2 = new Date().format("yyyy-MM-dd");
+        // console.log(date2)
+
+
+        // var date = (new Date('1999/11/17 12:12:12')).getTime();
+        // var newDate = new Date(date).format("yyyy-MM-dd")
+
+        // console.log(newDate)
+
+        // var oldTime = (new Date("2012/12/25 20:11:11")).getTime();
+        // var curTime = new Date(oldTime).format("yyyy-MM-dd");
+        // console.log(curTime);
+
+        // var da = 1402233166999;
+        // var da1 = new Date(da);
+        // var year = da1.getFullYear() + '年';
+        // var month = da1.getMonth() + 1 + '月';
+        // var date = da1.getDate() + '日';
+        // console.log([year, month, date].join('-'));
+    </script>
+</body>
+
+</html>

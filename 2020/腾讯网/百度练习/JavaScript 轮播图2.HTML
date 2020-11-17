@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <script src="tools.js"></script>
+    <script>
+        //需求：浏览器每次更改大小，判断是否符合某一标准然后给背景上色。
+        //  // >960红色，大于640小于960蓝色，小于640绿色。
+
+        window.onresize = fn; //页面大小发生变化时，执行该函数。
+        //页面加载的时候直接执行一次函数，确定浏览器可视区域的宽，给背景上色
+        fn();
+
+        //封装成函数，然后指定的时候去调用和绑定函数名
+        function fn() {
+            if (client().width > 960) {
+                document.body.style.backgroundColor = "red";
+            } else if (client().width > 640) {
+                document.body.style.backgroundColor = "blue";
+            } else {
+                document.body.style.backgroundColor = "green";
+            }
+        }
+
+        function client() {
+            if (window.innerHeight !== undefined) {
+                return {
+                    "width": window.innerWidth,
+                    "height": window.innerHeight,
+                }
+            } else if (document.compatMode === "css1compat") {
+                return {
+                    "width": document.documentElement.clientWidth,
+                    "height": document.documentElement.clientHeight,
+                }
+            } else {
+                return {
+                    "width": document.body.clientWidth,
+                    "height": document.body.clientHeight,
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+.box ol li { float: left; width: 10px; height: 10px; margin-left: 5px; border: 1px solid #999; background-color: red; cursor: pointer; } .box1 ol li.current { background-color: #ff0; } img { width: 500px; height: 200px; }
+</style>
+<script>
+    window.onload = function() {
+
+        var box = document.getElementById("box");
+        var box1 = box.firstChild || box.firstElementChild;
+        var ul = box1.firstChild || box1.firstElementChild
+        var ol = box1.children[1];
+        var imgWidth = box.offsetWidth;
+
+        // 复制第一张图片  并放入ul的最后一个
+        var ulNewLi = ul.children[0].cloneNode(true);
+        ul.appendChild(ulNewLi);
+
+
+        // 给ol 中添加小方块 ，并把ol中的第一个添加样式
+        for (var i = 0; i < ul.children.length - 1; i++) {
+            var newOlLi = document.createElement('li');
+            newOlLi.innerHTML = i + 1;
+            ol.appendChild(newOlLi);
+        }
+        var olArr = ol.children;
+        olArr[0].className = 'current';
+
+
+        // 绑定索引值，将小方块 和 图片轮播的 索引值关联，并设置鼠标放到小方块上的样式及this.index时的图片
+        for (var i = 0; i < olArr.length; i++) {
+
+            olArr[i].index = i;
+            olArr[i].onmouseover = function() {
+                for (var j = 0; j < olArr.length; j++) {
+                    olArr[j].className = '';
+                }
+                this.className = 'current';
+                key = square = this.index;
+                animate(ul, -this.index * imgWidth)
+            }
+        }
+
+        // 小方块的定时器
+        var timer = setInterval(autoPlay, 1000);
+        var key = 0;
+        // 通过 key 和 square 模拟图片和小方块的索引值
+        var square = 0;
+
+        function autoPlay() {
+            key++;
+            if (key > olArr.length) {
+                ul.style.left = 0;
+                key = 1
+            }
+            animate(ul, -key * imgWidth);
+
+            square++;
+            if (square > olArr.length - 1) {
+                square = 0
+            }
+            for (var i = 0; i < olArr.length; i++) {
+                olArr[i].className = '';
+            }
+            olArr[square].className = 'current';
+        }
+
+
+        box.onmouseover = function() {
+            clearInterval(timer)
+        }
+        box.onmouseout = function() {
+            timer = setInterval(autoPlay, 1000)
+        }
+
+        var add = null;
+
+        function animate(ele, target) {
+            clearInterval(add)
+            var speed = target > ele.offsetLeft ? 10 : -10;
+            add = setInterval(function() {
+
+                ele.style.left = ele.offsetLeft + speed + 'px';
+
+                var val = target - ele.offsetLeft;
+                if (Math.abs(val) < Math.abs(speed)) {
+                    ele.style.left = target + 'px';
+                    clearInterval(add)
+                }
+            }, 10)
+        }
+    }
+</script>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="box1">
+            <ul class="ul">
+                <li>
+                    <img src="../图片/timg (1).jpeg" alt="">
+                </li>
+                <li>
+                    <img src="../图片/timg.jpeg" alt="">
+                </li>
+                <li>
+                    <img src="../图片/u=2777522828,984112431&fm=26&gp=0.jpg" alt="">
+                </li>
+            </ul>
+            <ol>
+
+            </ol>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

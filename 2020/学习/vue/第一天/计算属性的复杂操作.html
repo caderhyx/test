@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>年龄总值:{{add}}</h2>
+    </div>
+</body>
+<script src="../vue/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            ages: [{
+                name: 1,
+                age: 12
+            }, {
+                name: 2,
+                age: 22
+            }, {
+                name: 3,
+                age: 42
+            }, {
+                name: 4,
+                age: 23
+            }, {
+                name: 5,
+                age: 53
+            }, ]
+        },
+        computed: {
+            add: function() {
+                let result = 0;
+                for (let i in this.ages) {
+                    result += this.ages[i].age
+                }
+                return result
+            }
+        }
+    })
+</script>
+
+</html>

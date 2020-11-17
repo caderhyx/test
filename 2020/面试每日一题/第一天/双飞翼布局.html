@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header,
+        .footer {
+            border: 1px solid #ccc;
+            background-color: #999;
+            text-align: center;
+        }
+        
+        .left,
+        .right,
+        .center {
+            float: left;
+        }
+        
+        .left {
+            margin-left: -100%;
+            width: 220px;
+            background-color: red;
+            word-break: break-all;
+        }
+        
+        .right {
+            margin-left: -200px;
+            width: 200px;
+            background-color: blue;
+            word-break: break-all;
+        }
+        
+        .center {
+            width: 100%;
+        }
+        
+        .min {
+            margin-left: 220px;
+            margin-right: 200px;
+            background-color: green;
+            word-break: break-all;
+        }
+        
+        .footer {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>header</h1>
+    </div>
+    <div class="center">
+        <div class="min">
+            <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb ddddddddddddddddddd
+            </p>
+        </div>
+    </div>
+    <div class="left">
+        <p>ooooooooooooooooo oooooooooooooooooooooooo ooooo
+        </p>
+    </div>
+    <div class="right">
+        <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    </div>
+
+    <div class="footer">
+        <h1>footer</h1>
+    </div>
+</body>
+
+</html>

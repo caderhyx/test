@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .aaaaa {
+            color: red,
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 现在想要动态绑定class 肯定不能写死 这里用了boolear -->
+    <!-- <div v-bind:class='{类名1：boolear，类名2：boolear}'> </div> -->
+    <div id="app">
+        <h2 :class="{aaaaa:isColor,line:isLine}">{{message}}</h2>
+
+        <!-- 如果有的class属性是死的可以这样 -->
+        <h2 class="title" :class='{aaaaa:isColor,line:isLine}'>{{message}}</h2>
+        <!-- v-on 是监听事件   js代码中需要在 methods{} 中设置 -->
+        <button v-on:click='btnclick'>按钮</button>
+    </div>
+</body>
+
+<script src="../vue/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hi',
+            isColor: true,
+            isLine: true,
+        },
+        methods: {
+            btnclick: function() {
+                this.isColor = !this.isColor;
+            }
+        }
+    })
+</script>
+
+</html>

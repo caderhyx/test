@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 1000px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: #0f0;
+        }
+        
+        .box .content {
+            margin-right: -10px;
+        }
+        
+        .first {
+            float: left;
+            width: 242.5px;
+            height: 100px;
+            background-color: #eaeaea;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        /*           方法 一
+        .box .content .first:nth-child(4n) {
+            margin-right: 0;
+        } */
+        /*           方法 二
+            margin-left-width+podding-left-width+margin-right-width+podding-right-width+
+            boder+width(content的width)=(box的width)   
+            现在想让它右边多出来10px 这样就不会转到第二行 所以：
+            0+0-10px+0+0+width=1000px
+         */
+    </style>
+</head>
+
+<body>
+    <div class="box ">
+        <div class="content">
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+            <div class="first"></div>
+        </div>
+    </div>
+</body>
+
+</html>

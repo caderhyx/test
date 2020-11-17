@@ -1,0 +1,42 @@
+<!-- 因为所有对象的最顶层的原型是Object
+    所以在Object原型对象中添加css方法即可。
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>dom对象</p>
+    <ul>
+        <li>添加方法</li>
+    </ul>
+    <script>
+        var p = document.getElementsByTagName('p')[0];
+        var li = document.getElementsByTagName('li')[0];
+        // 为每个dom对象，添加一个设置样式的方法，
+        Object.prototype.css = function(styleName, v) {
+            // 如果是一个具体的名字这儿用.   如果是变量的话使用[]
+            this.style[styleName] = v;
+        };
+        p.css('color', 'red')
+        li.css('backgroundColor', '#ccc')
+
+        // ************************************************
+
+        Object.prototype.css = function(styleName, v) {
+            this.style[styleName] = v;
+            return this;
+        };
+        // 想要使用这种链式操作，需要每次使用完方法后将这个p返回,所以加个return this 即可
+        p.css('color', 'red').css('fontSize', '30px').css('border', 'soild 1px red')
+    </script>
+</body>
+
+</html>

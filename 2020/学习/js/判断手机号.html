@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var tel = '15135558888';
+        // test是需要正则表达式来.
+        // 这儿正则表达式中如果没有$，15135558888aaaaass 这个也为 true
+        var res = /^1\d{10}$/g.test(tel);
+        // 判断手机2、3 位
+        var res1 = /^1(32|31|33)\d{8}$/g.test(tel);
+    </script>
+</body>
+
+</html>

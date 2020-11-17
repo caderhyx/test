@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 值传递    这个的打印结果为： name：“why”
+    <script>
+        function test(name) {
+            name: "jeams";
+        }
+
+        var temp = "why";
+        test(temp);
+        console.log(temp);
+    </script>
+     -->
+
+
+    <!-- 引用传递   这个的打印结果为：【1，23，nba，41】 -->
+    <script>
+        function sums(num) {
+            num[2] = "nba";
+        }
+
+        var temp = [1, 23, 42, 41];
+        sums(temp);
+        console.log(temp);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 想要a的超链接和图片的地址都不写死，又不能使用{{}}语法的时候
+      不可以在href=’‘中使用{{}}
+      这里使用 v-bind
+  -->
+    <div id="app">
+        <a v-bind:href="ahref"></a>
+        <img v-bind:src="imgUrl" alt="">
+    </div>
+
+    <!--  V-bind 有语法糖===简写形式     v-bind 可以直接替换为 : -->
+
+    <div id="app">
+        <a :href="ahref"></a>
+        <img :src="imgUrl" alt="">
+    </div>
+
+    <script src=""></script>
+    <script>
+        let appp = new Vue({
+            el: '#app',
+            data: {
+                message: 'hahahah',
+                ahref: 'http//www.baidu.com',
+                imgUrl: 'aohaofha;fa;infa;nfa;'
+            }
+
+        })
+    </script>
+</body>
+
+</html>

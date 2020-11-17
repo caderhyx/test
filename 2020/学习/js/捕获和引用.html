@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = '1122 3232 8907 8080';
+        // 要求： 匹配连续的4个数字，并且第1个数字和第3个数字相同 第2个数字和第4个数字也相同；
+        // \d 表示匹配单个的数字  （\d）表示捕获到第一个数字，并存下来
+        // \1 表示第一个（）  \2 表示第二个 （）   
+        //  1 、2 相当于引用
+        var result = str.match(/(\d)（\d）\1\2/)
+
+        // 禁止引用
+        // ?: 表示捕获了但禁止引用 不能使用\2
+        var result2 = str.match(/(\d)(?:\d)\1\d/g)
+
+
+        var str1 = '1122 1111 3434  4677 9090';
+        var r = /(\d)\d\1\d/g;
+
+        var i = r.lastIndex;
+        // 开始匹配的位置
+        var res = r.exec(str1);
+        // 匹配的结果 '3344','3'  这里的3 是捕获到的
+        console.log(i, res);
+
+        var i = r.lastIndex;
+        var res = r.exec(str1);
+        console.log(i, res);
+    </script>
+</body>
+
+</html>

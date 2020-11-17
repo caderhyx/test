@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //  练习1     删除数组中的重复值
+        var arr1 = [1, 2, 3, 2, 4, 6, 6, 3, 1, 6, 4, 6, 8, 35, 36, 35];
+        for (var i = 0; i < arr1.length; i++) {
+            for (var j = i + 1; j < arr1.length; j++) {
+                if (arr1[i] == arr1[j]) {
+                    arr1.splice(j, 1);
+                    // 当删除索引j之后，它后面的值会顶上去，所以索引j上头的值会变，但这个变了
+                    // 的值它还没有遍历 j++ 会跳过它直接读下一个 ，所以这儿需要 j-- 再读一下他
+                    j--;
+                }
+            }
+        }
+        console.log(JSON.stringify(arr1))
+
+
+        // 练习2     将字符串中间以”丨“分割
+        var raa2 = ["江山", "美人", "如画"];
+        // var add2 = raa2.join("丨");
+        // // console.log(add2)
+
+        var add1 = raa2[0];
+        var sign = "|";
+        for (var i = 1; i < raa2.length; i++) {
+
+            add1 += sign + raa2[i];
+        }
+        console.log(add1)
+
+
+
+        // var arr = ["千古", "宿敌", "素颜"];
+        // var str = arr[0];
+        // var separator = "|";
+        // for (var i = 1; i < arr.length; i++) {
+        //     str += separator + arr[i]; //从第1个数组元素开始，每个元素前面加上符号"|"
+        // }
+
+        // console.log(str)
+
+
+
+
+        // 练习3  字符串数组进行翻转
+
+
+        var array = [11, 22, 33, 44, 55];
+
+        // 方法1
+        // console.log(array.reverse())
+
+        // // 方法2
+        // function reverse(array) {
+        //     for (var i = 0; i < array.length / 2; i++) {
+        //         var team = array[i];
+        //         array[i] = array[array.length - 1 - i]
+        //         array[array.length - 1 - i] = temp
+        //     }
+        //     return array;
+        // }
+        // console.log(array)
+
+        // 方法3(有点问题)
+        var array = [11, 22, 33, 44, 55];
+
+        function reverse(array) {
+            var array1 = [];
+            for (var j = array.length - 1; j >= 0; j--) {
+                array1[array1.length] = array[j];
+            }
+            return array1;
+        }
+        console.log(reverse(array))
+
+
+
+        // 练习4
+        var maney = [1500, 1200, 2000, 2100, 1800];
+        var newMeney = maney.filter(item => item <= 2000)
+        console.log(newMeney)
+
+
+        // 练习5
+        //    编写一个方法 去掉一个数组的重复元素
+        var arr = [1, 2, 3, 4, 5, 2, 3, 4];
+        console.log(arr);
+        var aaa = fn(arr);
+        console.log(aaa);
+        //思路：创建一个新数组，循环遍历，只要新数组中有老数组的值，就不用再添加了。
+        function fn(array) {
+            var newArr = [];
+            for (var i = 0; i < array.length; i++) {
+                //开闭原则
+                var bool = true;
+                //每次都要判断新数组中是否有旧数组中的值。
+                for (var j = 0; j < newArr.length; j++) {
+                    if (array[i] === newArr[j]) {
+                        bool = false;
+                    }
+                }
+                if (bool) {
+                    newArr[newArr.length] = array[i];
+                }
+            }
+            return newArr;
+        }
+    </script>
+</body>
+
+</html>

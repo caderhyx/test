@@ -1,0 +1,50 @@
+<!-- 作业 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onclick = function() {
+            var f = document.f;
+            f.onsubmit = function() {
+
+                // return false;
+                // 阻止表单提交
+                if (!/^[a-zA-Z]\w{3,}$/g.test(f.username.value)) {
+                    alert('ID不符合要求！')
+                    return false;
+
+                }
+                // 长度至少6位 带密码强度  纯数字或纯字母表示弱  数字字母混合表示中  数字字母大小写混合表示强
+                if (/^[0-9A-Za-z]{6,}$/g.test(f.pwd.value)) {
+                    if (/(^[a-z]+$)|(^[A-Z]+$)|(^\d+$)/g.test(f.pwd.value)) {
+                        alert('密码安全系数弱')
+                            // return false;
+                    } else if (/(^[0-9a-z]+$)|(^[0-9A-Z]+$)| (^[a-zA-Z]+$)/g.test(f.pwd.value)) {
+                        alert('密码安全系数中')
+                    } else {
+                        alert('安全系数强')
+                    }
+                } else {
+                    alert('密码设置的长度不够')
+                    return false;
+
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="f" action="" method="post">
+        用户名： <input type="text" name="username"><br> 密　码： <input type="password" name="pwd"><br> 手机号： <input type="text" name="tel"><br> 邮　箱： <input type="text" name="email"><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+
+</html>

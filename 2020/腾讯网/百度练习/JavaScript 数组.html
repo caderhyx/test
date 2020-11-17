@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var arr1 = [1, 2, 3];
+        var arr2 = new Array();
+        var arr3 = new Array(3);
+        var arr4 = new Array(4, 5, 6);
+        console.log(typeof arr1)
+        console.log("arr2=" + JSON.stringify(arr2))
+        console.log(JSON.stringify(arr3))
+        console.log(JSON.stringify(arr4))
+
+
+
+
+        // 数组前后翻转
+        var arr = [3, 4, 5, 6, 7];
+        var newArr = [];
+        for (i = 0; i < arr.length; i++) {
+            newArr[i] = arr[arr.length - 1 - i];
+        }
+        console.log(JSON.stringify(newArr))
+
+
+        var arr1 = [3, 4, , 8, 5, 6, 7, 22, 1, 2, 11];
+        // arr1.reverse();
+        arr1.sort()
+
+        console.log(JSON.stringify(arr1))
+
+
+
+        var arr1 = ["a", "b", "c", "d", "e", "f"];
+        var result1 = arr1.splice(1); //从第index为1的位置开始，删除元素
+
+        console.log("arr1：" + JSON.stringify(arr1));
+        console.log("result1：" + JSON.stringify(result1));
+
+
+
+        var arr1 = [1, 2, 3, 4, 5];
+        var arr2 = arr1.map(function(item, index) {
+            return item + 10;
+        })
+        console.log(JSON.stringify(arr1))
+        console.log(JSON.stringify(arr2))
+
+
+        const arr5 = [{
+            name: 'hyx',
+            age: '18',
+        }, {
+            name: 'hyw',
+            age: '20',
+        }];
+        const arr6 = arr5.map(item => item.age);
+        const arr7 = arr5.map(item => ({
+            newName: item.name,
+            newAge: item.age
+        }));
+        console.log(JSON.stringify(arr5))
+        console.log(JSON.stringify(arr6))
+        console.log(JSON.stringify(arr7))
+    </script>
+</body>
+
+</html>

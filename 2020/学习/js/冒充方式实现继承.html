@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 父类.apply（子类的对象）  意思是让子类的对象，去代替父类中的this 。
+
+        //  父类
+        function A() {
+            this.age = 18;
+            this.name = '张三'
+            this.say = function() {
+                console.log(this.age)
+            }
+        }
+
+        A.prototype.cook = function() {
+            console.log(this.name)
+        }
+
+        // 子类
+        function B() {
+            // 让B的实例，继承 A
+            A.apply(this)
+        }
+        // 实例化 子类
+        var b = new B;
+        console.log(b.age, b.name)
+        b.say(); //18
+        b.cook(); // Uncaught TypeError: b.cook is not a function
+        // 父类的原型对象上的成员是不能被”子类“继承的
+        // 能够被继承的是”父类“函数内部的成员。
+    </script>
+</body>
+
+</html>

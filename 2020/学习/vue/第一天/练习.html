@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- <li v-for='m in movies'>{{m}}</li> -->
+            <li v-for='(m,index) in movies' :class="{active:isActive}" v-on='click'>{{index}}-{{m}}</li>
+        </ul>
+    </div>
+
+    <script src="../vue/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                movies: ['海贼王', '哈哈哈哈哈', '肖申克的救赎', '哈利波特'],
+                isActive: false,
+            },
+            methods: {
+                click: function() {
+                    //     for (let i in this.movies) {
+                    //         this.movies[i].isActive = true
+                    //     }
+
+                    this.movies[0].isActive = true
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

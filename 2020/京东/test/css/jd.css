@@ -1,0 +1,431 @@
+*{
+	margin: 0;
+	padding: 0;	
+}
+body{
+	background-color:#f5f5f5;
+}
+ul,li
+{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	
+	/*
+	全部字体去除a链接的下划线
+	*/
+}
+@font-face {
+  font-family: 'jd';  /* project id 1631708 */
+  src: url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.eot');
+  src: url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.woff2') format('woff2'),
+  url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_1631708_yr3n3hz9af.svg#iconfont') format('svg');
+}
+header{
+	background-color:#e3e4e5;
+ }
+header .head-right{
+	float: right;
+}
+header .city{
+	display: inline-block;
+	width: 58px;
+	height: 30px;
+}
+header .city span{
+	position: relative;
+	z-index: 2;
+	display: block;
+	line-height: 30px;
+	width: 58px;
+	height: 30px;
+	font-size: 12px;
+	border: 1px solid transparent;
+	/** transparent透明的 默认加了个边框,相当于hover前后高一样,所以不抖动了 **/
+	border-bottom: none;
+	font-family: 'jd';  
+}
+header .city:hover .city-list{
+	display: block;
+}
+header .city:hover span{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+header .city ul{
+	position: absolute;
+	z-index: 1;
+	left: 0px; 
+	width: 322px; 
+	height: 268px;
+	top:29px;
+	padding: 10px;
+	background-color: #fff;
+	display: none;
+	border: 1px solid #ccc;
+}
+header .city ul li{
+	display: inline-block;
+	margin: 0 10px;
+}
+header .head-right > li{
+	/* >施命于儿子辈,孙子辈不涉及*/
+	position: relative;
+	display: inline-block;
+	padding:0 10px;
+	line-height: 30px;
+	font-family: 'jd';
+}
+header .head-right a,header .head-right > li{
+	font-size: 12px;
+}
+/* 伪类元素 :before  :after 
+	>:.head-right 下一辈的li  与li 的下一辈li无关
+*/
+header .head-right > li:after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -5px;
+	display: block;
+	width: 1px;
+	height: 10px;
+	background: #ccc;
+}
+header .beijing{
+	width: 1190px;
+	height: 30px;
+	margin: 0 auto;
+	position: relative;
+}
+header .city li{
+	font-size: 12px;
+	margin-right:10px ;
+	margin-top: 10px;
+	padding: 0 12px;
+}
+header .city li:hover{
+	background-color: #999999;
+	color: red;
+}
+header .city .citys:hover,header .city .citys{
+	background-color:red ;
+	color:white;
+	
+}
+header .head-right li,header .head-right li a{
+	color:#999;
+}
+header .head-right li:hover,header .head-right li a:hover{
+	color: red;
+}
+header .head-right li .zhuce{
+	color: red;
+}
+header .head-right .jingdong{
+	position: relative;	
+}
+
+header .jingdong .wodejd {
+	position: absolute;
+	z-index: 1;
+    width: 265px;
+	height: 72px;
+	top: 29px;
+	padding: 10px 0 10px 15px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	display: none;
+	
+}
+header .head-right .jingdong span{
+	position: relative;
+	display:block ;
+	border: 1px solid transparent;
+	z-index: 2;
+	border-bottom: none;
+}
+header .jingdong .wodejd li{
+	width: 64px;
+	display: inline-block;
+	height: 12px;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	line-height: 12px;
+	/* padding: 0 10px; */	
+    font-size: 10px;	
+}
+header .jingdong:hover span{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+header .jingdong:hover .wodejd{
+	display: block;
+}
+header .head-right .qiyecaigou span{
+	position: relative;
+	display: block;
+	color: red;
+	border: 1px solid transparent;
+	border-bottom: none;
+	z-index: 2;
+}
+header .qiyecaigou .qiye{
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	top: 29px;
+	padding: 10px;	
+	background-color: #fff;
+	display: none;
+}
+header .head-right .qiyecaigou:hover span{
+	color: red;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom:none ;
+}
+header .head-right .qiyecaigou:hover .qiye{
+	display: block;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+header .head-right .kehufuwu span{
+	display: block;
+	position:relative ;
+	z-index: 2;
+	border: 1px solid transparent;
+	border-bottom: none;
+}
+header .head-right .kehufuwu .kehu{
+	position: absolute;
+	width: 100px;
+	height: 120px;
+	top: 29px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	display: none;
+}
+header .head-right .kehufuwu:hover span{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom:none ;
+}
+header .head-right .kehufuwu:hover .kehu{
+	display: block;
+}
+header .head-right .kehufuwu .kehu .ke,header .head-right .kehufuwu .kehu .shang{
+	color: black;
+	font-weight: bold;
+}
+header .head-right .wzdh span{
+	position: relative;
+	border: 1px solid transparent;
+	display: block;
+	z-index: 2;
+}
+header .head-right .wzdh .wz > div{
+	display: inline-block;
+	margin-right:20px;
+	padding: 20px;	
+	
+	line-height: 50px;
+	font-size: 12px;
+}
+header .head-right .wzdh .wz{
+	position: absolute;
+	z-index: 1;
+	width: 500px;
+	height: 200px;
+	top:29px;
+	padding: 10px;
+	right: -10px;
+	background-color: #fff;
+	display: none;
+	color: black;
+	font-weight: bold;
+}
+header .head-right .wzdh .wz div{
+	position: relative;
+}
+header .wzdh .wz > div:after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 40%;
+	margin-top: -10px;
+	display: block;
+	width: 1px;
+	height: 50px;
+	background: #ccc;
+}
+header .head-right .wzdh .wz div:last-child{
+	border: none;
+}
+header .head-right .wzdh:hover span{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+header .head-right .wzdh:hover .wz{
+	display: block;
+}
+nav form{
+	margin: 50px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.sousuo{
+	
+	width: 504px;
+	height: 36px;
+	border: 2px solid red;
+
+}
+.ss{
+	width:82px ;
+	height: 40px;
+	margin: 0px;
+	font-size: 20px ;
+	color: white;
+	background-color: red;
+	border: 0;
+	outline: none;
+	font-family: 'jd';
+}
+/* 全部商品 */
+.zhengwen{
+	width: 1190px;
+	margin: 0 auto;	
+	
+}
+.zhengwen ul{
+	display: flex;
+	flew-direction:row;		
+}
+.zhengwen ul li{
+	font-weight:  700;
+	padding-right: 30px;
+	line-height: 33px;
+}
+.zhengwen ul li a{
+	color: black;	
+}
+.zhengwen ul li a:hover{
+	color: red;
+}
+.zhengwen ul .link{
+	background-color: red;
+	width: 170px;
+	height: 33px;
+	padding:10px 50px;
+	color: white;
+	font-weight: 400;
+	position: relative;
+}
+.zhengwen ul .link:hover{
+	color: white;	
+}
+.zhengwen .fenlei a{
+	
+	font-size: 15px;
+	color: #999;
+	width: 196px;	
+	
+}
+.zhengwen .fenlei {
+	display: none;
+	background-color: #fff;
+	padding: 1px 0;
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #999;
+}
+.zhengwen .quanbushangpin:hover .fenlei {
+	display: block;
+}
+.banner{
+	width: 100%;
+	height: 800px;
+	background: url(https://m.360buyimg.com/babel/jfs/t1/92591/19/10852/488865/5e23fa2bEf5edbf59/b5485b4b2fb2a925.jpg.webp) no-repeat 50% 50%;
+}
+footer{
+	background-color:#e3e4e5;	
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+footer .abbb{
+	width: 100%;
+	height: 102px;	
+	border-bottom:1px solid #999999 ;
+}
+footer .abb{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-grow: <1>;
+	width: 1233px;
+	height: 102px;
+	margin: 0 auto;
+}
+
+footer .abb li{
+	width: 292px;
+	height: 42px;
+	padding: 30px 0 30px 0px;	
+	font-weight: 700;
+	display: flex;
+    font-size: 18px;
+	line-height: 42px;
+	/* text-indent:46px */;
+	color: #444;
+}
+footer .abb1 {
+	width: 1285px;
+	height: 160px;
+	padding: 20px 0 20px 65px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+footer .abb1 li{
+	flex: 1;
+	/**
+	 
+	 */
+	display: flex;
+	flex-direction: column;	
+}
+footer .abb1 li a{
+	font-size: 12px;
+	color: #999;
+}
+footer .abb1 li a:hover{
+	color: red;
+}
+/* 返回顶部 */
+.gotop{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	/* 上下居中 */
+	text-align: center;
+	/* 文本左右居中 */
+	background-color: #999999;
+	font-family: jd;
+}

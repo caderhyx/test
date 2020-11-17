@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>;
+        <!-- 在console上  app.message= 'hehehe'  页面会显示’hehehe‘ -->
+        <h2 v-once>{{message}}</h2>
+        <!-- 在console上  app.message= 'hehehe'  页面不发生变化。 -->
+    </div>
+    <script src=""></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 哈哈哈哈,
+            }
+        })
+    </script>
+</body>
+
+</html>

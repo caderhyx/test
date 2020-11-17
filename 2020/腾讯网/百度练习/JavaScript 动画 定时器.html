@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            position: absolute;
+            /*  注意  必须是定位父级 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="box1">动画</button>
+    <button id="box3">停止</button>
+
+    <div id="box2" style="left: 0px;">
+
+    </div>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = document.getElementById('box2');
+        var box3 = document.getElementById('box3')
+
+        var add = null;
+
+
+        box1.onclick = function() {
+            add = setInterval(function() {
+                console.log(parseInt(box2.style.left));
+                box2.style.left = box2.offsetLeft + 1 + 'px';
+            }, 10);
+        }
+
+        box3.onclick = function() {
+                clearInterval(add)
+            }
+            // var box1 = document.getElementById('box1')
+            // var box2 = document.getElementById('box2')
+            // var box3 = document.getElementById('box3')
+
+        // // 定义一个全局变量add
+        // var add = null
+
+        // box1.onclick = function() {
+        //     // 为全局变量add赋值一个 定时器函数
+        //     add = setInterval(function() {
+        //         box2.style.left = box2.offsetLeft + 5 + 'px'
+        //     }, 300);
+        // }
+
+        // box3.onclick = function() {
+        //     // && 符号返回布尔值，检查add是否有值，有值的时候清除定时器
+        //     add && clearInterval(add)
+        // }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div style="position: relative;" class="box">
+        <div style="position: absolute;" class="box1"></div>
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div> -->
+    <!-- <script>
+        var box3 = document.getElementsByClassName('box3')[0];
+        // var box1 = document.getElementsByClassName('box1')[0];
+        // var box = document.getElementsByClassName('box')[0];
+
+        console.log(box3.offsetParent);
+        // console.log(box1.offsetParent);
+        // console.log(box.offsetParent); -->
+    <!-- </script> -->
+</body>
+
+</html>

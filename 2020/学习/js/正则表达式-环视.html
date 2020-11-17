@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // every（？=n）匹配任何其后紧接指定 字符串n的字符串
+
+        var str = 'abacaf';
+        // 想要找a，后面紧接着b的a 
+        var result = str.match(/a(?=b)/g);
+
+
+        // every（?！b） 匹配后面不紧接b的a  /a(?!b)/g
+
+
+        //  （？！n） 表示不能有n
+        var str1 = abcde;
+        var result1 = str1.match(/(?!b)[a-z]/g)
+            //  a c d e
+
+        // 下面表示：整个字符串可以由数字、字母组合，但不能是纯数字
+        var result2 = str.match(/(?!^\d$)^[0-9a-zA-Z]+$/g)
+
+        console.log(result)
+    </script>
+</body>
+
+</html>

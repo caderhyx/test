@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var add = "woshihouyaoxin";
+        var add1 = new String(add)
+        console.log(add)
+        console.log(add[2])
+        console.log(add1)
+
+
+        var add2 = "   abcdead";
+        console.log(add2)
+        console.log(add2.indexOf("a"))
+        console.log(add2.lastIndexOf("a"))
+        console.log(add2.indexOf("c"))
+        console.log(add2.lastIndexOf("c"))
+        console.log(add2.indexOf("d"))
+        console.log(add2.lastIndexOf("d"))
+        console.log(add2.indexOf("d", 3))
+
+
+        var str = "abcdEFG";
+
+        //转换成小写
+        console.log(str.toLowerCase());
+
+        //转换成大写
+        console.log(str.toUpperCase());
+
+
+
+
+        var str1 = 'smyhvaevaesmyh';
+        for (var i = 0; i < str1.length; i++) {
+            if (str1.charAt(i) === 'm') {
+                console.log(i)
+            }
+        }
+
+
+
+        // 练习：一个字符串中出现次数最多的字符，统计这个计数
+
+        var str2 = 'smyhvaevaesmyhh';
+
+        var json = {};
+        for (var i = 0; i < str2.length; i++) {
+            var key = str2.charAt(i);
+            if (json[key] === undefined) {
+                json[key] = 1
+                    // console.log(json)
+            } else {
+                json[key] += 1
+                    // console.log(json)
+            }
+        }
+        console.log(json)
+        var maxkey = "";
+        var maxvalue = 0;
+        for (var k in json) {
+            if (json[k] > maxvalue) {
+                maxkey = k;
+                maxvalue = json[k];
+            }
+        }
+        console.log(maxkey)
+        console.log(maxvalue)
+    </script>
+</body>
+
+</html>

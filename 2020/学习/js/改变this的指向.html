@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var o1 = {
+            name: '张三'
+        };
+        var o2 = {
+            name: '李四',
+            say: function(x, y) {
+                console.log(this.name)
+            }
+        }
+        o2.say();
+        // 李四
+        o2.say.call(o1);
+        // 语法: 函数.call()
+        // 改变say函数中的this指向，修改为指向o1
+        o2.say.call(o1, 10, 20);
+        // 改变this指向，并将实参传入形参
+
+
+        o2.say.apply(o1, [10, 20]);
+        // 和call的区别是后面的参数必须是数组类型的。
+        // 后面的数组中的值传递给say方法。
+
+        o2.say.bind(o1, 10, 20)();
+        // 后面的小括号表示调用函数
+        o2.say.bind(o1)(20, 10);
+        // 加入小括号，并加参数传进去
+
+        // 找数组中的最大值
+        var arr = [2, 3, 4, 1, 56, , 77, 5];
+        console.log(Math.max.apply(null, arr));
+        // apply()后面数组中的值传递给了max函数
+    </script>
+</body>
+
+</html>

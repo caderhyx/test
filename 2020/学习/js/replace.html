@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用子表达式替换
+        var str = 'asc';
+        // 再外部引用 捕获到的子表达式时 使用 ‘$1$2’
+        var r = str.replace(/([a-z])/g, '$1$1');
+        console.log(r)
+
+
+        // 借助子表达式
+        // $1,$2,$3 捕获的东西   $` 表示捕获的表达式左侧的所有东西     $' 表示捕获的表达式右侧的所有东西
+    </script>
+</body>
+
+</html>

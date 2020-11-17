@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // \w 表示一个数字、字母、下划线
+        var str = 'pha_asp';
+        var result = str.match(/p\w*p/g);
+
+        // \W 表示一个非数字、非字母、非下划线
+        var str1 = 'p -*^.p';
+        var result1 = str1.match(/p\W*p/g);
+
+        var str2 = 'hello1234abc333';
+        var result2 = str2.match(/\d/g)
+            // '1' '2' '3' '4' '3' '3' '3'
+        var result3 = str2.match(/\D/g)
+            // 'h' 'e' 'l' 'l' 'o' 'a' 'b' 'c'
+        var result4 = str2.match(/\d+/g)
+            // '1234' '333'
+
+
+
+        // \s 表示一个空格
+        // \b 表示匹配单词边界（\b放前面表示匹配单词前面的边界，\b表示匹配单词后面的边界）
+
+
+
+
+
+
+        console.log(result3)
+    </script>
+</body>
+
+</html>

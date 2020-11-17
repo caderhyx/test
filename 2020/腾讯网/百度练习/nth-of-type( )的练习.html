@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:nth-of-type(3) {
+            color: red;
+            /* 
+        首先点位到时p元素
+        然后是p元素中的第三个元素
+        */
+        }
+        
+        p:nth-child(3) {
+            color: red;
+            /* 首先是p元素下的
+                然后是第三个子元素
+            */
+        }
+        
+        p:nth-last-of-type(3) {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>这里是span1</span>
+        <p>这里是p1</p>
+        <p>这里是p2</p>
+        <div>这里是div</div>
+        <p>这里是p3</p>
+        <p>这里是p4</p>
+        <p>这里是p5</p>
+        <p>这里是p6</p>
+    </div>
+</body>
+
+</html>
+<!-- nth-of-type()
+nth-child
+nth-of-tpe -->

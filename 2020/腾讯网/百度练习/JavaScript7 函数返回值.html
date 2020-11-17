@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+    <script>
+        function sum(num1, num2) {
+            var sums = num1 + num2;
+            console.log(sums);
+            return sums;
+
+        }
+
+        var add = sum(10, 20);
+        console.log(add);
+    </script> -->
+
+    <script>
+        // function nums(num1) {
+        //     var sum = num1 + 1;
+        //     var sam = num1 - 1;
+        //     console.log(sum, sam);
+        //     return sam;
+        //     var sim = num1 + 2;
+
+        // }
+        // var add = nums(2)
+        // console.log(add)
+
+
+        function bigSmallNum(arr) {
+            for (var i = 0; i < arr.length / 2; i++) {
+                var temp = arr[i];
+                arr[i] = arr[arr.length - 1 - i];
+                arr[arr.length - 1 - i] = temp;
+            }
+            return arr;
+        }
+        var nums = [12, 13, 32, 42, 425, 35, 54]
+        add = bigSmallNum(nums)
+        console.log(add)
+    </script>
+
+</body>
+
+</html>

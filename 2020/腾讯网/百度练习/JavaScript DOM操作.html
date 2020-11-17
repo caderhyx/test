@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img src="kasdhak" alt="" class="img1" title="img2">
+    <div id="box1">
+        houyaoxin
+    </div>
+    <script>
+        var a = document.createElement("li");
+        var b = document.createElement("sbca");
+        // a.appendChild(box1)
+        console.log(a)
+        console.log(b)
+        console.log(typeof a)
+        console.log(typeof b)
+
+        var myNode = document.getElementsByTagName("img")[0];
+
+        // // 获取节点属性
+        // console.log(myNode.src)
+        // console.log(myNode.title)
+        // console.log(myNode.className)
+        // console.log(myNode["src"]);
+        // console.log(myNode['className']);
+        // // 设置节点属性
+        // console.log(myNode.className = 'img6')
+
+
+
+
+        // 获取节点属性
+        console.log(myNode.getAttribute('src'))
+        console.log(myNode.getAttribute('title'))
+        console.log(myNode.getAttribute('class')) // img1
+            // attribute  属性
+
+        // // 设置节点的属性值
+        console.log(myNode.setAttribute('class', 'img5')) // undefined
+        console.log(myNode.setAttribute("id", "nihoa")) // undefined
+        console.log(myNode.getAttribute("class")) //  img5
+            // // 删除节点的属性
+        console.log(myNode.removeAttribute('class')) // undefined
+        console.log(myNode.getAttribute("class")) // null
+
+
+
+
+        var element = document.getElementById("box1"); //获取元素节点（标签）
+        var attribute = element.getAttributeNode("id"); //获取box1的属性节点
+        var txt = element.firstChild; //获取box1的文本节点
+
+        var value = element.getAttribute("id"); //获取id的属性值
+
+        console.log(element);
+        console.log("--------------");
+        console.log(attribute);
+        console.log("--------------");
+        console.log(txt);
+        console.log("--------------");
+        console.log(value);
+    </script>
+</body>
+
+</html>

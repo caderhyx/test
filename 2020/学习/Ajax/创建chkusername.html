@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="username" /> <span id='msg'></span>
+    <script>
+        // 0.创建Ajax （XMLHttpRequest）对象
+        // 1.准备发送（发送给谁，什么方式发送，同步或异步发送）
+        // 2.发送请求到服务器
+        // 3.服务器返回数据给Ajax对象
+        // 4.Ajax对象接收到服务器返回的数据，然后处理。
+
+        // 当input失去焦点的时候，发送请求
+        document.getElementById('username').onblur = function() {
+            // 第一步，创建ajax对象
+            var xhr = new XMLHttpRequest();
+            // 第二步，准备工作
+            // 要发送给服务器的用户名
+            var uname = this.value;
+            // xhr.open(请求方式，请求地址，同步或异步)； 该方法用户发送请求前的准备工作
+            xhr.open('get', 'text.php?u=' + uname, true);
+            // 第三步，发送请求到服务器
+            // send 的参数表示post请求的参数，因为我们用的是get请求，所以不用填
+            xhr.send();
+
+            // 当xhr执行的时候，如果状态发送变化，就会触发事件
+            xhr.onreadystatechange = function() {
+                // readystate可能是变化有： 0~1/1~2/2~3/3~4
+
+                if (xhr.readyState == 4) {
+                    // 服务器完成返回数据，这时才应该接收数据并处理
+                    // 第四步，接收服务器返回的数据，并处理
+                    // 用responseText 来接收服务器返回的文本类型的信息
+                    var result = xhr.responseText;
+
+
+                    // 判断
+                    if (result == 1) {
+                        document.getElementById('msg').innerHTML = '<font color ="red">sorry</font>'
+                    } else if (result === 0) {
+                        document.getElementById('msg').innerHTML = '<font color ="red">yes</font>'
+                    }
+
+                }
+            }
+
+
+        };
+    </script>
+</body>
+
+</html>

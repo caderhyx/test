@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // new 内置函数
+        // 使用对象点语法，调用对象
+        var s = new String('hello world');
+        console.log(typeof s);
+        console.log(s.length)
+            // 截取
+        console.log(s.substr(2))
+
+
+        // 直接量语法
+        console.log('hello world'.length)
+
+        var obj = {
+            name: '张三',
+            age: 20,
+            say: function() {
+
+            }
+        }
+
+        // 使用构造函数
+        function m(a, b) {
+            this.name = a;
+            this.age = b;
+            this.say = function() {
+                console.log()
+            }
+        }
+        var p = new m('hyw', '10');
+
+        // 得到对象之后，可以为对象添加一些成员（属性和方法） 对象.属性
+        // 给对象添加成员
+        obj.sex = 'nan';
+        p.sex = 'nv';
+
+        // 删除对象的成员
+        delete obj.name;
+        delete p.sex;
+        // delete 可以删除没有用var声明的变量
+        abc = 123;
+        var bcd = 456;
+        delete abc;
+        // 这个会被删除
+        delete bcd;
+        // 这个不会被删除
+
+
+
+        var a1 = new m('hyx', 10)
+        var a2 = new m('hyw', 10)
+
+        // var p3 = p1   
+        // p3.name = 'asd'   p1的name 和 p3 的name 都为 asd
+        // p3 获取了 p1 对象的地址，p3 也指向了p1堆区
+
+        var p3 = p1
+        p3 = null
+            // 这时候并不影响p1的name  ，因为其实只是将p3指向堆区的引用切断了
+    </script>
+</body>
+
+</html>

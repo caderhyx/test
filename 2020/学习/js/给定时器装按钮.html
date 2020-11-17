@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='clock'></div>
+    <input type="button" value="停止" id="stop">
+    <input type="button" value="继续" id="go">
+</body>
+<script>
+    function check(n) {
+        if (n < 10) {
+            n = '0' + n;
+        }
+        return n;
+    }
+
+    function t() {
+        var d = new Date();
+        var year = d.getFullYear();
+        var month = check(d.getMonth() + 1);
+        var day = check(d.getDate());
+        var hour = check(d.getHours());
+        var minute = check(d.getMinutes());
+        var second = check(d.getSeconds());
+
+        var s = year + '年' + month + '月' + day + '日' + hour + ':' + minute + ':' + second;
+        document.getElementById('clock').innerText = s;
+    }
+    t();
+    // 这里多次点击继续后，会发现点击停止不管用，原因是，点击多次后它的定时器会进行很多次，可是停止只是停止最后一次的定时器
+    // 解决方法：  只有点击完停止之后才能进行继续按钮
+    var flag = true;
+    var x = setInterval(t, 1000);
+
+    document.getElementById('stop').onclick = function() {
+        clearInterval(x);
+        flag = false
+    };
+
+    document.getElementById('go').onclick = function() {
+        if (flag) {
+            return false
+        }
+        flag = true;
+        x = setInterval(t, 1000);
+    };
+</script>
+
+</html>

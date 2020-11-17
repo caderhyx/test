@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <!-- 数组语法 -->
+
+    <div id="app">
+        <h2 class="title" :class='[active ,line]'>{{message}}</h2>
+        <h2 class="title" :class='getClass()'>{{message}}</h2>
+        <!-- 两个效果一样 -->
+    </div>
+
+    <script src="../vue/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                message: 'hahahah',
+                active: 'aaaaaaa',
+                line: 'bbbbbbb',
+            },
+            methods: {
+                getClass: function() {
+                    return [this.active, this.line]
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

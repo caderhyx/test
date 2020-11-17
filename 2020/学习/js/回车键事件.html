@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        input.onkeyup = function() {
+            //  按回车键 进行事件
+            var e = window.event || evt;
+            var keyCode = e.keyCode;
+            if (keyCode == 13) {
+                td.innerHTML = this.value;
+            }
+        }
+    </script>
+</body>
+
+</html>
